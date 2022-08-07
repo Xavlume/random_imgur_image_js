@@ -1,8 +1,8 @@
 // Edited from https://stackoverflow.com/a/1349426
 function get_random_imgur_link(){
-    var result = 'https://i.imgur.com/';
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890123456789';
-    var charactersLength = characters.length;
+    const result = 'https://i.imgur.com/';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890123456789';
+    const charactersLength = characters.length;
     for ( var i = 0; i < 5; i++ ) {
       result += characters.charAt(Math.floor(Math.random() * 
  charactersLength));
@@ -18,7 +18,7 @@ async function check_if_redirect(file) {
 }
 
 async function display_random_imgur_image() {
-  var the_link = get_random_imgur_link();
+  const the_link = get_random_imgur_link();
   await check_if_redirect(the_link)
   if (is_redirect){
     display_random_imgur_image()
